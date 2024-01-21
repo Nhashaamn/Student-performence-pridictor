@@ -6,6 +6,7 @@ This project is a Student Performance Predictor that utilizes linear regression.
 
 - **Objective:** Predict student performance using linear regression on Kaggle dataset.
 - **Technologies Used:**
+  - Python
   - HTML
   - CSS
   - JavaScript
