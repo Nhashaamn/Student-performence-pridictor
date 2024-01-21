@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block title %}
+HOME
+{% endblock title %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Predictor</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1C2833;
+            color: #ECF0F1;
+        }
+
+        header {
+            background-color: #28a745; /* Updated color */
+            text-align: center;
+            padding: 2em 0;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+            padding: 2em;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+            color: #ECF0F1;
+            font-family: 'Playfair Display', serif;
+        }
+
+        p {
+            font-size: 1.4em;
+            color: #BDC3C7;
+        }
+
+        .objectives,
+        .overview {
+            flex: 1;
+            margin: 1em;
+            padding: 1em;
+            border: 2px solid #28a745; 
+            border-radius: 10px;
+            background-color: #2C3E50;
+            text-align: center;
+        }
+
+        .objectives img,
+        .overview img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .image-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #28a745; 
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        footer p {
+            color: #ECF0F1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Student Performance Predictor</h1>
+    </header>
+
+    <section>
+        <div class="objectives">
+            <div class="image-container">
+                <img src="static/spp1.jpg" alt="Objective" class="img-fluid">
+            </div>
+            <h1>Objective</h1>
+            <p>The primary objective of our Student Performance Prediction System is to leverage cutting-edge data analytics and machine learning techniques to forecast and predict the academic performance of students. We are dedicated to providing educators, administrators, and students with invaluable insights derived from comprehensive analysis of historical academic data. Our goal is to empower decision-makers with the knowledge needed to enhance academic success and foster a proactive educational environment.</p>
+        </div>
+        <div class="overview">
+            <div class="image-container">
+                <img src="static/spp2.jpg" alt="Overview" class="img-fluid">
+            </div>
+            <h1>Overview</h1>
+            <p>Our Student Performance Prediction System, as outlined on our website, is meticulously designed to analyze diverse academic data, ranging from historical grades to attendance records. We deploy advanced machine learning algorithms to discern correlations and patterns within the data, enabling us to make accurate predictions about future academic performance.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Student Performance Prediction. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
+
+{% endblock body %}

@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    h1 {
+        color: #28a745;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 50px;
+    }
+    p {
+        color: #666;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .result-box {
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        padding: 20px;
+        margin-top: 30px;
+    }
+</style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="result-box">
+            <p>GPA: <span id="predicted-gpa"></span></p>
+            
+        </div>
+    </div>
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        
+        // Get the predicted GPA from the backend and update the HTML
+        const predictedGpaElement = document.getElementById('predicted-gpa');
+        const predictedGpa = "{{ predicted_gpa }}";
+        predictedGpaElement.textContent = predictedGpa;
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+Model
+{% endblock title %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Predictor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa; /* Off-white background color */
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #28a745; /* Dark green color */
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #343a40; /* Dark grey background color */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light box shadow */
+        }
+        label {
+            font-weight: bold;
+            color: #28a745; /* Dark green color */
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745; /* Dark green color */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #218838; /* Slightly darker shade on hover */
+        }
+        small {
+            color: #6c757d; /* Bootstrap secondary text color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <h1>GPA Predictor</h1>
+                <form action="/predict" method="post" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label for="Weekly_Study_Hours">Weekly Study Hours:</label>
+                        <input type="text" name="Weekly_Study_Hours" id="Weekly_Study_Hours" class="form-control" required placeholder="Enter weekly study hours (e.g., 10)">
+                        <small class="text-muted">Study hours should not exceed 21.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Attendance Percentage">Attendance Percentage:</label>
+                        <input type="text" name="Attendance Percentage" id="Attendance Percentage" class="form-control" required placeholder="Enter attendance percentage (e.g., 80)">
+                        <small class="text-muted">Attendance should be at least 75%.</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Predict GPA</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function validateForm() {
+            var weeklyStudyHours = parseFloat(document.getElementById("Weekly_Study_Hours").value);
+            var attendancePercentage = parseFloat(document.getElementById("Attendance Percentage").value);
+
+            if (isNaN(weeklyStudyHours) || isNaN(attendancePercentage)) {
+                alert("Please enter valid numeric values for study hours and attendance.");
+                return false;
+            }
+
+            if (weeklyStudyHours > 21) {
+                alert("Study hours cannot exceed 21.");
+                return false;
+            }
+
+            if (attendancePercentage < 75) {
+                alert("Sorry, you need at least 75% attendance.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
+
+{% endblock body %}
+```
+
+Now, the background color of the page is off-white (#f8f9fa).
